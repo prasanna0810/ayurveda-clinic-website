@@ -1,0 +1,697 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Vedanshi - Super Speciality Ayurveda Clinic</title>
+      <style>
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+          }
+
+          .hero {
+              height: 100vh;
+              width: 100%;
+              background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('ayurvedic-bg.jpg');
+              background-size: cover;
+              background-position: center;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              color: #fff;
+          }
+
+          .main-title {
+              font-size: 5rem;
+              font-family: 'Arial', sans-serif;
+              margin-bottom: 1rem;
+              opacity: 0;
+              animation: fadeIn 2s ease-in forwards;
+          }
+
+          .sub-title {
+              font-size: 2rem;
+              font-family: 'Arial', sans-serif;
+              opacity: 0;
+              animation: fadeIn 2s ease-in forwards 1s;
+          }
+
+          @keyframes fadeIn {
+              from {
+                  opacity: 0;
+                  transform: translateY(20px);
+              }
+              to {
+                  opacity: 1;
+                  transform: translateY(0);
+              }
+          }
+
+          /* Add these styles to your existing CSS */
+          .doctor-section {
+              padding: 80px 20px;
+              background: #f9f5f0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 50px;
+          }
+
+          .doctor-image {
+              width: 400px;
+              height: 500px;
+              object-fit: cover;
+              border-radius: 10px;
+              box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+              opacity: 0;
+              transform: translateX(-50px);
+              animation: slideInLeft 1s ease forwards;
+          }
+
+          .doctor-info {
+              max-width: 500px;
+              opacity: 0;
+              transform: translateX(50px);
+              animation: slideInRight 1s ease forwards;
+          }
+
+          .doctor-name {
+              font-size: 2.5rem;
+              color: #2c3e50;
+              margin-bottom: 15px;
+          }
+
+          .doctor-credentials {
+              font-size: 1.2rem;
+              color: #34495e;
+              line-height: 1.6;
+          }
+
+          @keyframes slideInLeft {
+              to {
+                  opacity: 1;
+                  transform: translateX(0);
+              }
+          }
+
+          @keyframes slideInRight {
+              to {
+                  opacity: 1;
+                  transform: translateX(0);
+              }
+          }
+      </style>
+  </head>
+  <body>
+      <div class="hero" id="home">
+          <h1 class="main-title">VEDANSHI</h1>
+          <h2 class="sub-title">SUPER SPECIALITY AYURVEDA CLINIC</h2>
+      </div>
+
+      <section class="doctor-section" id="about">
+          <img src="doctor.jpg" alt="Dr. Gundeti Anjali" class="doctor-image">
+          <div class="doctor-info">
+              <h2 class="doctor-name">Dr. Gundeti Anjali</h2>
+              <div class="doctor-credentials">
+                  <p>BAMS (MD. OBG Ayurveda)</p>
+                  <p>CGO. CCH</p>
+                  <p>Consultant Ayurvedic Physician</p>
+              </div>
+          </div>
+      </section>
+
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              const mainTitle = document.querySelector('.main-title');
+              const subTitle = document.querySelector('.sub-title');
+            
+              mainTitle.style.opacity = '0';
+              subTitle.style.opacity = '0';
+            
+              setTimeout(() => {
+                  mainTitle.style.opacity = '1';
+                  setTimeout(() => {
+                      subTitle.style.opacity = '1';
+                  }, 1000);
+              }, 500);
+          });
+
+          // Add this to your existing JavaScript
+          function checkScroll() {
+              const doctorSection = document.querySelector('.doctor-section');
+              const position = doctorSection.getBoundingClientRect().top;
+              const screenPosition = window.innerHeight / 1.3;
+
+              if(position < screenPosition) {
+                  doctorSection.style.visibility = 'visible';
+              }
+          }
+
+          window.addEventListener('scroll', checkScroll);
+      </script>
+  </body>
+  </html>
+
+<!-- Add this section after the doctor-section -->
+<section class="treatments-section" id="treatments">
+    <h2 class="section-title">Special Treatments Available</h2>
+    <div class="treatments-grid">
+        <div class="treatment-card">
+            <img src="menstrual.jpg" alt="Menstrual Problems">
+            <h3>Menstrual Problems</h3>
+        </div>
+        <div class="treatment-card">
+            <img src="pcod.jpg" alt="PCOD">
+            <h3>PCOD</h3>
+        </div>
+        <div class="treatment-card">
+            <img src="infertility.jpg" alt="Infertility">
+            <h3>Infertility</h3>
+        </div>
+        <div class="treatment-card">
+            <img src="endometriosis.jpg" alt="Endometriosis">
+            <h3>Endometriosis</h3>
+        </div>
+        <div class="treatment-card">
+            <img src="fibroids.jpg" alt="Uterine Fibroids">
+            <h3>Uterine Fibroids</h3>
+        </div>
+        <div class="treatment-card">
+            <img src="pain.jpg" alt="Pain Management">
+            <h3>Pain Management</h3>
+        </div>
+        <div class="treatment-card">
+            <img src="panchakarma.jpg" alt="Panchakarma Treatment">
+            <h3>Panchakarma Treatment</h3>
+        </div>
+        <div class="treatment-card">
+            <img src="obesity.jpg" alt="Obesity">
+            <h3>Obesity</h3>
+        </div>
+        <div class="treatment-card">
+            <img src="thyroid.jpg" alt="Thyroid Disorders">
+            <h3>Thyroid Disorders</h3>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Add these styles to your existing CSS */
+.treatments-section {
+    padding: 80px 20px;
+    background: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 50px;
+}
+
+.treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.treatment-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.treatment-card:hover {
+    transform: translateY(-10px);
+}
+
+.treatment-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.treatment-card h3 {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #34495e;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .treatments-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+</style>
+
+<script>
+// Add this to your existing JavaScript
+function animateTreatmentCards() {
+    const cards = document.querySelectorAll('.treatment-card');
+    cards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', animateTreatmentCards);
+</script>
+
+<!-- Add this section after the treatments-section -->
+<section class="appointment-section">
+    <h2 class="section-title">Book an Appointment</h2>
+    <form class="appointment-form" id="appointmentForm">
+        <div class="form-group">
+            <input type="text" name="name" required>
+            <label>Full Name</label>
+        </div>
+        
+        <div class="form-group">
+            <input type="tel" name="phone" pattern="[0-9]{10}" required>
+            <label>Phone Number</label>
+        </div>
+
+        <div class="form-group">
+            <input type="email" name="email" required>
+            <label>Email Address</label>
+        </div>
+
+        <div class="form-group">
+            <input type="date" name="date" required>
+            <label>Preferred Date</label>
+        </div>
+
+        <div class="form-group">
+            <select name="time" required>
+                <option value="">Select Time Slot</option>
+                <option value="5:00 PM">5:00 PM</option>
+                <option value="5:30 PM">5:30 PM</option>
+                <option value="6:00 PM">6:00 PM</option>
+                <option value="6:30 PM">6:30 PM</option>
+                <option value="7:00 PM">7:00 PM</option>
+                <option value="7:30 PM">7:30 PM</option>
+                <option value="8:00 PM">8:00 PM</option>
+                <option value="8:30 PM">8:30 PM</option>
+            </select>
+            <label>Preferred Time (5 PM - 9 PM)</label>
+        </div>
+
+        <div class="form-group">
+            <textarea name="symptoms" required></textarea>
+            <label>Symptoms/Concerns</label>
+        </div>
+
+        <button type="submit" class="submit-btn">Book Appointment</button>
+    </form>
+</section>
+
+<style>
+/* Add these styles to your existing CSS */
+.appointment-section {
+    padding: 80px 20px;
+    background: #f5f8ff;
+}
+
+.appointment-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-group label {
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    background: #fff;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #34495e;
+}
+</style>
+
+<script>
+document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const appointmentData = {
+        to: 'Vedanshiayurvedic@gmail.com',
+        subject: 'New Appointment Request',
+        body: `
+            Name: ${formData.get('name')}
+            Phone: ${formData.get('phone')}
+            Email: ${formData.get('email')}
+            Date: ${formData.get('date')}
+            Time: ${formData.get('time')}
+            Symptoms: ${formData.get('symptoms')}
+        `
+    };
+
+    // Here you'll need to integrate with your preferred email service
+    // Example using Email.js or your backend API
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', appointmentData)
+        .then(function() {
+            alert('Appointment request sent successfully!');
+            document.getElementById('appointmentForm').reset();
+        })
+        .catch(function(error) {
+            alert('Error sending appointment request. Please try again.');
+        });
+});
+</script>
+
+<!-- Add this section after the appointment-section -->
+<section class="contact-section" id="contact">
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:9396644030">+91 9396644030</a></p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h3>Address</h3>
+                    <p>1-8-703/9/A, First Floor,<br>
+                       Near Shankermutt,<br>
+                       Nallakunta,<br>
+                       Hyderabad</p>
+                </div>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.2397834811394!2d78.51340731487567!3d17.39916788807983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99c44444444f%3A0x1234567890abcdef!2sNallakunta%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1629789456789!5m2!1sen!2sin"
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Add these styles to your existing CSS */
+.contact-section {
+    padding: 80px 20px;
+    background: #fff;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+}
+
+.contact-info {
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+}
+
+.info-item i {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-right: 15px;
+    padding-top: 5px;
+}
+
+.info-item h3 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.info-item a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+    color: #2c3e50;
+}
+
+.map-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<!-- Add this in the head section of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- Add this section at the very bottom of the body tag -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>© 2024 Vedanshi Super Speciality Ayurveda Clinic. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<style>
+/* Add these styles to your existing CSS */
+.footer {
+    background: #2c3e50;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 0;
+}
+</style>
+
+<!-- Add this at the top of your body tag -->
+<header class="header">
+    <div class="header-content">
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Vedanshi Logo" class="logo">
+            <div class="clinic-name">
+                <h1>Vedanshi</h1>
+                <p>Super Speciality Ayurveda Clinic</p>
+            </div>
+        </div>
+        <nav class="nav-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#treatments">Treatments</a>
+            <a href="#appointmentForm" class="book-btn">Book Appointment</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<style>
+.header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 15px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.header:hover {
+    transform: translateX(-50%) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.clinic-name h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.clinic-name p {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #16a085;
+}
+
+.book-btn {
+    background: #16a085;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background: #1abc9c;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .header {
+        width: 90%;
+        padding: 10px 15px;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+}
+</style>
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+    </script>
+    
